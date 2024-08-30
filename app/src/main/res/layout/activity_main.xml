@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Main Content -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,58 +16,43 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/bottom_shadow"
             android:elevation="8dp"
-            android:paddingStart="16dp"
-            android:paddingTop="8dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="8dp"
+            android:padding="16dp"
             android:layout_margin="0dp"
-            app:navigationIcon="@drawable/baseline_menu_24"
-            app:buttonGravity="center_vertical"
-            app:titleTextColor="@android:color/black"
-            android:shadowColor="@color/bottom_nav_item_color_inactive">
-
-            <TextView
-                android:id="@+id/toolbar_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="MY NOTES"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:layout_gravity="center" />
-        </androidx.appcompat.widget.Toolbar>
-
-
+            app:title="ALL NOTES"
+            app:titleTextColor="@android:color/black" />
 
         <!-- Search Bar -->
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
-            android:hint="SEARCH"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/toolbar"
             android:layout_margin="16dp"
-            android:background="@drawable/search_view_background"/>
+            android:background="@drawable/search_view_background"
+            android:queryHint="Search Notes" />
 
         <!-- RecyclerView for Notes -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="0dp"
             android:layout_below="@id/search_view"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="95dp"
-            android:clipToPadding="false"
+            android:layout_above="@+id/bottom_app_bar_container"
             android:padding="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_note" />
 
-
+        <!-- Include Bottom Navigation at the Bottom -->
         <include
             android:id="@+id/bottom_app_bar_container"
-            layout="@layout/bottom_nav_bar" />
+            layout="@layout/bottom_nav_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
     </RelativeLayout>
 
     <!-- Navigation View for Drawer Menu -->

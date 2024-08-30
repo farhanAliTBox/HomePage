@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".NoteDetailActivity">
+
+    <!-- Title Input -->
+    <EditText
+        android:id="@+id/note_title_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title"
+        android:enabled="false" />
+
+    <!-- Description Input -->
+    <EditText
+        android:id="@+id/note_description_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:layout_marginTop="16dp"
+        android:minHeight="100dp"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:layout_below="@id/note_title_edit_text"
+        android:enabled="false" />
+
+    <!-- Date Input -->
+    <EditText
+        android:id="@+id/note_date_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_description_edit_text"
+        android:enabled="false"
+        android:hint="Date  DD-MM-YYYY" />
+
+    <!-- Edit Button -->
+
+    <!-- Back Button -->
+
+    <Button
+        android:id="@+id/button_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_date_edit_text"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
+        android:text="Edit" />
+
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_edit"
+        android:layout_marginTop="8dp"
+        android:text="Back" />
+
+</RelativeLayout>
